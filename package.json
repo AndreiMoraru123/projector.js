@@ -1,0 +1,17 @@
+{
+  "name": "projector.ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AndreiMoraru123/projector.ts.git",
+  "author": "AndreiMoraru123 <81184255+AndreiMoraru123@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/command-line-args": "^5.2.1",
+    "@types/node": "^20.8.2",
+    "command-line-args": "^5.2.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
