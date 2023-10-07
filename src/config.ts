@@ -73,12 +73,10 @@ function getOperation(opts: Opts): Operation {
     return Operation.Print;
   }
 
-  // @ts-ignore
   if (opts.args[0] === "add") {
     return Operation.Add;
   }
 
-  // @ts-ignore
   if (opts.args[0] === "rm") {
     return Operation.Remove;
   }
