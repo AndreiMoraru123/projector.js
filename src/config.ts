@@ -27,7 +27,7 @@ function getConfig(opts: Opts): string {
   }
 
   const home = process.env["HOME"];
-  const loc = process.env["XDG_CONFIG_HOME"] || home;
+  const loc = process.env["APPDATA"] || home;
 
   if (!loc) {
     throw new Error("unable to determine config location")
