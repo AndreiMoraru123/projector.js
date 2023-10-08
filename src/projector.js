@@ -80,6 +80,13 @@ class Projector {
         var _a;
         (_a = this.data.projector[this.config.pwd]) === null || _a === void 0 ? true : delete _a[key];
     }
+    save() {
+        const configPath = path_1.default.dirname(this.config.config);
+        if (!fs.existsSync(configPath)) {
+            fs.mkdirSync(configPath, { recursive: true });
+        }
+        fs.writeFileSync(this.config.config, JSON.stringify(this.data));
+    }
     static fromConfig(config) {
         if (fs.existsSync(config.config)) {
             let data;

@@ -18,10 +18,11 @@ const defaultData = {
 
 export default class Projector {
 
-  constructor(private config: Config, private data: Data) {}
+  constructor(private config: Config, private data: Data) {
+  }
 
 
-  getValueAll() : {[key: string] : string}{
+  getValueAll(): { [key: string]: string } {
 
     let curr = this.config.pwd;
     let prev = "";
@@ -74,8 +75,16 @@ export default class Projector {
     this.data.projector[pwd][key] = value;
   }
 
-  removeValue(key: string){
+  removeValue(key: string) {
     delete this.data.projector[this.config.pwd]?.[key];
+  }
+
+  save() {
+    const configPath = path.dirname(this.config.config);
+    if (!fs.existsSync(configPath)) {
+      fs.mkdirSync(configPath, {recursive: true})
+    }
+    fs.writeFileSync(this.config.config, JSON.stringify(this.data));
   }
 
   static fromConfig(config: Config): Projector {
