@@ -56,11 +56,9 @@ function getOperation(opts) {
     if (!opts.args || opts.args.length === 0) {
         return Operation.Print;
     }
-    // @ts-ignore
     if (opts.args[0] === "add") {
         return Operation.Add;
     }
-    // @ts-ignore
     if (opts.args[0] === "rm") {
         return Operation.Remove;
     }
